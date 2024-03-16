@@ -1,24 +1,18 @@
-import ErrorPage from "../error-page";
-import HomePage from "./home";
-import Layout from "./layout";
+import Layout from "../components/Products/layout1/layout/layout";
+import Error from "../components/jsUtils/error/Error";
 
 const routes = [
-    {
+  {
+    path: "/",
+    element: <Layout />,
+    errorElement: <Error />,
+    children: [
+      {
         path: "/",
-        element: <Layout />,
-        errorElement: <ErrorPage />,
-        children: [
-            {
-                path: "/",
-                element: <HomePage />
-            },
-            {
-                path: "/contacts/:id",
-                element: <div>Contact</div>
-            }
-        ]
-    },
-
+        element: <>Landing Page</>,
+      },
+    ],
+  },
 ];
 
 export default routes;
